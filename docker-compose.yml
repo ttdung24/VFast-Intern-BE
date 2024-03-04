@@ -1,0 +1,16 @@
+version: '3.9'
+name: 'vfast_intern_db'
+services:
+  db:
+    container_name: 'vfast_intern_db'
+    hostname: 'vfast_intern_db'
+    image: 'postgres'
+    restart: always
+    ports:
+      - 5431:5432
+    environment:
+      POSTGRES_DB: vfast_intern_db
+      POSTGRES_USER: vfast_intern_db
+      POSTGRES_PASSWORD: abcd1234
+    volumes:
+      - ./db:/var/lib/postgresql/data
